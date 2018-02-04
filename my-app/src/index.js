@@ -90,8 +90,7 @@ class Game extends React.Component {
 
     const moves = history.map((step, move) => {
       const desc = move ?
-        //'Go to move #' + move:
-        'Go to move #' + move + ' coords: (' + step.moveCoords.x + ', ' + step.moveCoords.y + ')' :
+        'Go to move #' + move + ' '+ (((Number(move) % 2) === 0)?'O':'X') +': ' + step.moveCoords.x + ', ' + step.moveCoords.y + ')' :
         'Go to game start';
       return (
         <li key={move}>
